@@ -23,13 +23,19 @@ def calculate_company_threat(departments):
 
 if __name__ == "__main__":
     departments_data = [
-        {"scores": generate_random_data(30, 5, 50), "importance": 3},
-        {"scores": generate_random_data(40, 10, 100), "importance": 4},
-        {"scores": generate_random_data(60, 15, 75), "importance": 5},
-        {"scores": generate_random_data(20, 5, 80), "importance": 2},
-        {"scores": generate_random_data(70, 10, 30), "importance": 1}
-    ]
+    {"scores": generate_random_data(10, 5, 50), "importance": 1},
+    {"scores": generate_random_data(70, 10, 100), "importance": 4},
+    {"scores": generate_random_data(60, 15, 75), "importance": 5},
+    {"scores": generate_random_data(20, 5, 80), "importance": 1},
+    {"scores": generate_random_data(30, 10, 30), "importance": 2}
+]
+
 
     company_threat_score = calculate_company_threat(departments_data)
-    print("Company Threat Score:", company_threat_score)
+    for department in departments_data:
+        print("Department scores:", department["scores"])
+        print("Department importance:", department["importance"])
+    print("Final Company Threat Score:", company_threat_score)
+
+
 
